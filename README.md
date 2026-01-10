@@ -23,9 +23,10 @@ The focus of the project is on building a clean, interactive editor with clear d
 
 ## 📦 Clone the Repository
 
-````bash
+```bash
 git clone https://github.com/Sriram-Harshit/Pipeline-Builder.git
 cd Pipeline-Builder
+```
 
 ---
 
@@ -35,7 +36,7 @@ cd Pipeline-Builder
 
 ```bash
 cd backend
-````
+```
 
 ### 2. Create virtual environment (only once)
 
