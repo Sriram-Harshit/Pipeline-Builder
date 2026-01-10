@@ -21,13 +21,21 @@ The focus of the project is on building a clean, interactive editor with clear d
 
 ---
 
+## 📦 Clone the Repository
+
+````bash
+git clone https://github.com/Sriram-Harshit/Pipeline-Builder.git
+cd Pipeline-Builder
+
+---
+
 ## 🚀 How to Run the Backend
 
 ### 1. Go to backend folder
 
 ```bash
 cd backend
-```
+````
 
 ### 2. Create virtual environment (only once)
 
