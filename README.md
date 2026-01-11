@@ -56,8 +56,6 @@ This project follows a **client–server architecture**, where the frontend and 
 
 - Keeps UI logic and validation logic separate
 - Makes the code easier to understand and maintain
-- Allows the frontend and backend to evolve independently
-- Matches real-world web application design
 
 ---
 
@@ -70,67 +68,19 @@ cd Pipeline-Builder
 
 ---
 
-## 🚀 How to Run the Backend
+## 🚀 Project Run Commands
 
-### 1. Go to backend folder
+- Use two terminals one for backend and one for frontend
 
-```bash
-cd backend
-```
-
-### 2. Create virtual environment (only once)
-
-```bash
-python -m venv venv
-```
-
-### 3. Activate virtual environment
-
-**Windows (Git Bash):**
-
-```bash
-source venv/Scripts/activate
-```
-
-**Linux / macOS:**
-
-```bash
-source venv/bin/activate
-```
-
-### 4. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Start the backend server
-
-```bash
-uvicorn main:app --reload
-```
-
-Backend runs at:
-
-```
-http://localhost:8000
-```
-
----
-
-## 🎨 How to Run the Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
-Frontend runs at:
-
-```
-http://localhost:3000
-```
+| Step                     | Backend                                                                                  | Frontend                |
+| ------------------------ | ---------------------------------------------------------------------------------------- | ----------------------- |
+| **Folder**               | `backend/`                                                                               | `frontend/`             |
+| **Go to folder**         | `cd backend`                                                                             | `cd frontend`           |
+| **Create environment**   | `python -m venv venv` _(one time)_                                                       | —                       |
+| **Activate environment** | `source venv/Scripts/activate` _(Windows)_<br>`source venv/bin/activate` _(Linux/macOS)_ | —                       |
+| **Install dependencies** | `pip install -r requirements.txt`                                                        | `npm install`           |
+| **Start server**         | `uvicorn main:app --reload`                                                              | `npm start`             |
+| **Runs on**              | `http://localhost:8000`                                                                  | `http://localhost:3000` |
 
 ---
 
@@ -167,27 +117,3 @@ Response:
 - Cycles are detected and can be rejected
 
 ---
-
-| Step                     | Backend                                                                                  | Frontend                |
-| ------------------------ | ---------------------------------------------------------------------------------------- | ----------------------- |
-| **Folder**               | `backend/`                                                                               | `frontend/`             |
-| **Go to folder**         | `cd backend`                                                                             | `cd frontend`           |
-| **Create environment**   | `python -m venv venv` _(one time)_                                                       | —                       |
-| **Activate environment** | `source venv/Scripts/activate` _(Windows)_<br>`source venv/bin/activate` _(Linux/macOS)_ | —                       |
-| **Install dependencies** | `pip install -r requirements.txt`                                                        | `npm install`           |
-| **Start server**         | `uvicorn main:app --reload`                                                              | `npm start`             |
-| **Runs on**              | `http://localhost:8000`                                                                  | `http://localhost:3000` |
-
----
-
-## 🚀 Project Run Commands
-
-| **Step**                       | **Backend**                                                                                                                                        | **Frontend**                                                           |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| **Folder**                     | <code>backend/</code>                                                                                                                              | <code>frontend/</code>                                                 |
-| **Navigate to folder**         | <pre><code>cd backend</code></pre>                                                                                                                 | <pre><code>cd frontend</code></pre>                                    |
-| **Create virtual environment** | <pre><code>python -m venv venv</code></pre><sub>(one time only)</sub>                                                                              | —                                                                      |
-| **Activate environment**       | <pre><code>source venv/Scripts/activate</code></pre><sub>Windows</sub><br><pre><code>source venv/bin/activate</code></pre><sub>Linux / macOS</sub> | —                                                                      |
-| **Install dependencies**       | <pre><code>pip install -r requirements.txt</code></pre>                                                                                            | <pre><code>npm install</code></pre>                                    |
-| **Start development server**   | <pre><code>uvicorn main:app --reload</code></pre>                                                                                                  | <pre><code>npm start</code></pre>                                      |
-| **Application URL**            | <pre><code>[http://localhost:8000](http://localhost:8000)</code></pre>                                                                             | <pre><code>[http://localhost:3000](http://localhost:3000)</code></pre> |
