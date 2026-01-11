@@ -21,6 +21,46 @@ The focus of the project is on building a clean, interactive editor with clear d
 
 ---
 
+## 🧱 Architecture
+
+This project follows a **client–server architecture**, where the frontend and backend have clearly separated roles.
+
+### Frontend (Client)
+
+- The frontend is built using **React** and **React Flow**
+- It is responsible for everything the user sees and interacts with
+- Users can drag nodes from the toolbar, drop them on the canvas, and connect them
+- All pipeline data (nodes, edges, and updates) is managed using **Zustand**
+- Zustand acts as a single place where the entire pipeline state is stored
+- React Flow is used only for UI rendering and interactions, not for storing state
+- When the user clicks the submit button, the frontend sends the current pipeline data to the backend
+
+### Backend (Server)
+
+- The backend is built using **FastAPI**
+- It receives the pipeline data from the frontend
+- It validates the pipeline by:
+  - checking node and edge references
+  - counting the total number of nodes and edges
+  - verifying whether the pipeline forms a valid **Directed Acyclic Graph (DAG)**
+- After validation, the backend sends the result back to the frontend
+
+### Communication Between Frontend and Backend
+
+- The frontend and backend communicate using simple **HTTP requests**
+- The frontend sends data using a POST request
+- The backend processes the data and responds with validation results
+- These results are shown to the user using a custom popup in the UI
+
+### Why This Architecture Was Used
+
+- Keeps UI logic and validation logic separate
+- Makes the code easier to understand and maintain
+- Allows the frontend and backend to evolve independently
+- Matches real-world web application design
+
+---
+
 ## 📦 Clone the Repository
 
 ```bash
@@ -127,3 +167,27 @@ Response:
 - Cycles are detected and can be rejected
 
 ---
+
+| Step                     | Backend                                                                                  | Frontend                |
+| ------------------------ | ---------------------------------------------------------------------------------------- | ----------------------- |
+| **Folder**               | `backend/`                                                                               | `frontend/`             |
+| **Go to folder**         | `cd backend`                                                                             | `cd frontend`           |
+| **Create environment**   | `python -m venv venv` _(one time)_                                                       | —                       |
+| **Activate environment** | `source venv/Scripts/activate` _(Windows)_<br>`source venv/bin/activate` _(Linux/macOS)_ | —                       |
+| **Install dependencies** | `pip install -r requirements.txt`                                                        | `npm install`           |
+| **Start server**         | `uvicorn main:app --reload`                                                              | `npm start`             |
+| **Runs on**              | `http://localhost:8000`                                                                  | `http://localhost:3000` |
+
+---
+
+## 🚀 Project Run Commands
+
+| **Step**                       | **Backend**                                                                                                                                        | **Frontend**                                                           |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Folder**                     | <code>backend/</code>                                                                                                                              | <code>frontend/</code>                                                 |
+| **Navigate to folder**         | <pre><code>cd backend</code></pre>                                                                                                                 | <pre><code>cd frontend</code></pre>                                    |
+| **Create virtual environment** | <pre><code>python -m venv venv</code></pre><sub>(one time only)</sub>                                                                              | —                                                                      |
+| **Activate environment**       | <pre><code>source venv/Scripts/activate</code></pre><sub>Windows</sub><br><pre><code>source venv/bin/activate</code></pre><sub>Linux / macOS</sub> | —                                                                      |
+| **Install dependencies**       | <pre><code>pip install -r requirements.txt</code></pre>                                                                                            | <pre><code>npm install</code></pre>                                    |
+| **Start development server**   | <pre><code>uvicorn main:app --reload</code></pre>                                                                                                  | <pre><code>npm start</code></pre>                                      |
+| **Application URL**            | <pre><code>[http://localhost:8000](http://localhost:8000)</code></pre>                                                                             | <pre><code>[http://localhost:3000](http://localhost:3000)</code></pre> |
