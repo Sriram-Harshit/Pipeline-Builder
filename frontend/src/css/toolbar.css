@@ -1,0 +1,11 @@
+.pipeline-toolbar {
+  padding: 14px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.pipeline-toolbar-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

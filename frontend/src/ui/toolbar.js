@@ -1,5 +1,5 @@
 import DraggableNode from "./draggableNode";
-import "./mainSrc.css";
+import "../css/toolbar.css";
 
 export const PipelineToolbar = () => {
   return (

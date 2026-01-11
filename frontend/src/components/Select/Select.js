@@ -5,7 +5,6 @@ const Select = ({ value, options = [], onChange }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
-  // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (ref.current && !ref.current.contains(e.target)) {
